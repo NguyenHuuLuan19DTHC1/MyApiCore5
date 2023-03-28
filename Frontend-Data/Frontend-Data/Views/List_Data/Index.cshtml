@@ -1,0 +1,635 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            padding-top: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #3e8e41;
+            }
+        #myInput1 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput1:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput3 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput3:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput4 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput4:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput5 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput5:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput6 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput6:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput2 {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput2:focus {
+                outline: 3px solid #ddd;
+            }
+        #myInput {
+            box-sizing: border-box;
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myInput:focus {
+                outline: 3px solid #ddd;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>
+            Danh sách
+        </h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+
+                    <th>Journal_name</th>
+                    <th>Category 1</th>
+                    <th>Category 2</th>
+                    <th>Category 3</th>
+                    <th>Category 4</th>
+                    <th>Category 5</th>
+                    <th>Category 6</th>
+                    <th>Citations</th>
+                    <th>Eissn</th>
+                    <th>If_2022</th>
+                    <th>Issn</th>
+                    <th>Jci</th>
+                    <th>PercentageOAGold</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="list-data">
+            </tbody>
+        </table>
+
+    </div>
+    <h2>
+        Register
+    </h2>
+    <div>
+        <label>UserName</label>
+        <input type="text" name="Username" required>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="Password">
+
+    </div>
+    <div>
+        <label>Name</label>
+        <input type="text" name="Name">
+
+    </div>
+    <div>
+        <select id="type">
+            <option value="GV">GIẢNG VIÊN</option>
+            <option value="NCM">NGHIÊN CỨU MẠNH</option>
+            <option value="NCV-1">NGHIÊN CỨU VIÊN 1</option>
+            <option value="NCV-2">NGHIÊN CỨU VIÊN 2</option>
+        </select>
+
+    </div>
+    <div>
+        <button id="create">Create</button>
+        @*<input id="create" type="submit">*@
+    </div>
+    <h2>
+        Login
+    </h2>
+    <div>
+        <div>
+            <label>UserName</label>
+            <input type="text" name="UsernameLogin" required>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="PasswordLogin">
+        </div>
+        <div>
+            <button id="login">Login</button>
+            @*<input id="create" type="submit">*@
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <div id="myDropdown" class="dropdown-content">
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction1()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput1" onkeyup="filterFunction1()">
+
+        <div id="myDropdown1" class="dropdown-content">
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction2()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
+
+        <div id="myDropdown2" class="dropdown-content">
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction3()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput3" onkeyup="filterFunction3()">
+
+        <div id="myDropdown3" class="dropdown-content">
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction4()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput4" onkeyup="filterFunction4()">
+
+        <div id="myDropdown4" class="dropdown-content">
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction5()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput5" onkeyup="filterFunction5()">
+
+        <div id="myDropdown5" class="dropdown-content">
+        </div>
+    </div>
+    <div class="dropdown">
+        <button onclick="myFunction6()" class="dropbtn">Dropdown</button>
+        <input type="text" placeholder="Search.." id="myInput6" onkeyup="filterFunction6()">
+
+        <div id="myDropdown6" class="dropdown-content">
+        </div>
+    </div>
+    <h2>
+        Update
+    </h2>
+    <script>
+        var listdata = document.querySelector('#list-data');
+        var linkGetApi = 'https://localhost:44396/api/TemporaryData/Get-all';
+        var linkPostApi = 'https://localhost:44396/api/Users/Create';
+        var linkLoginApi = 'https://localhost:44396/api/Users/Login/';
+        var linkGetAllTemData = 'https://localhost:44396/api/TemporaryData/Get-all';
+        var linkUpdateTemData = 'https://localhost:44396/api/TemporaryData/Update';
+        function start() {
+            getdata(render);
+            handleCreateForm();
+            login(function (dt) {
+                if (dt == true) {
+                    alert("Login Success");
+                }
+            });
+            getalltemdata(rendertemdatajour);
+            getalltemdata(rendertemdatacaty1);
+            getalltemdata(rendertemdatacaty2);
+            getalltemdata(rendertemdatacaty3);
+            getalltemdata(rendertemdatacaty4);
+            getalltemdata(rendertemdatacaty5);
+            getalltemdata(rendertemdatacaty6);
+        }
+        start();
+        function getdata(callback) {
+            fetch(linkGetApi)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(callback)
+        }
+        function render(dt) {
+            var list = document.querySelector('#list-data');
+            var htmls = dt.map(function (dt) {
+                return `<tr>
+                                                                                        <td>${dt.journal_name}</td>
+                                                                                        <td>${dt.category1}</td>
+                                                                                        <td>${dt.category2}</td>
+                                                                                        <td>${dt.category3}</td>
+                                                                                        <td>${dt.category4}</td>
+                                                                                        <td>${dt.category5}</td>
+                                                                                        <td>${dt.category6}</td>
+                                                                                        <td>${dt.citations}</td>
+                                                                                        <td>${dt.eissn}</td>
+                                                                                        <td>${dt.if_2022}</td>
+                                                                                        <td>${dt.issn}</td>
+                                                                                        <td>${dt.jci}</td>
+                                                                                        <td>${dt.percentageOAGold}</td>
+                                                                                        <td>${dt.status}</td>
+                                                                                        <button id="updatebtn" onclick="handleUpdate(${dt.journal_name},${dt.category1},${dt.category2},${dt.category3},${dt.category4},${dt.category5},${dt.category6},${dt.citations},${dt.eissn},${dt.if_2022},${dt.issn},${dt.jci},${dt.percentageOAGold},${dt.number})">Duyệt</button></tr>
+                                                                                    `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function update(data, callbacl) {
+            var options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch(linkUpdateTemData, options)
+                .then(function (response) {
+                    response.json();
+                })
+                .then(callback)
+        }
+        function handleUpdate( journal_name, category1, category2, category3, category4, category5, category6, citations, eissn, if_2022, issn, jci, percentageOAGold, number ) {
+            var updateBtn = document.querySelector('#updatebtn');
+            updateBtn.onclick = function () {
+                /*var formData = {
+                    journal_name: journal_name,
+                    issn: issn,
+                    eissn: eissn,
+                    category1: category1,
+                    category2: category2,
+                    category3: category3,
+                    category4: category4,
+                    category5: category5,
+                    category6: category6 ,
+                    citations: citations,
+                    if_2022: if_2022,
+                    jci: jci,
+                    percentageOAGold: percentageOAGold,
+                    number: number,
+                    status: 1
+                };*/
+                console.log(journal_name, category1, category2, category3, category4, category5, category6, citations, eissn, if_2022, issn, jci, percentageOAGold, number);
+                /*update(formData);*/
+            }
+        }
+        function create(data, callback) {
+            var options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch(linkPostApi, options)
+                .then(function (response) {
+                    response.json();
+                })
+                .then(callback)
+        }
+        function handleCreateForm() {
+            var createBtn = document.querySelector('#create');
+            createBtn.onclick = function () {
+                var userName = document.querySelector('input[name="Username"]').value;
+                var password = document.querySelector('input[name="Password"]').value;
+                var name = document.querySelector('input[name="Name"]').value;
+                var accountType = document.querySelector('#type').value;
+                var formData = {
+                    username: userName,
+                    password: password,
+                    name: name,
+                    accountType: accountType
+                };
+                console.log(userName, password, name, accountType);
+                create(formData);
+            }
+        }
+        function login(callback) {
+            var createBtn = document.querySelector('#login');
+            createBtn.onclick = function () {
+                var userName = document.querySelector('input[name="UsernameLogin"]').value;
+                var password = document.querySelector('input[name="PasswordLogin"]').value;
+                var link = linkLoginApi + userName + ',' + password;
+                console.log(link);
+                fetch(link)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(callback)
+            }
+        }
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function getalltemdata(callback) {
+            fetch(linkGetAllTemData)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(callback)
+        }
+        function rendertemdatajour(dt) {
+            var list = document.querySelector('#myDropdown');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.journal_name}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty1(dt) {
+            var list = document.querySelector('#myDropdown1');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category1}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty2(dt) {
+            var list = document.querySelector('#myDropdown2');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category2}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty3(dt) {
+            var list = document.querySelector('#myDropdown3');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category3}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty4(dt) {
+            var list = document.querySelector('#myDropdown4');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category4}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty5(dt) {
+            var list = document.querySelector('#myDropdown5');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category5}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function rendertemdatacaty6(dt) {
+            var list = document.querySelector('#myDropdown6');
+            var htmls = dt.map(function (dt) {
+                return `
+
+                                                <a href="">${dt.category6}</a>
+
+                                            `
+            });
+            list.innerHTML = htmls.join('');
+        }
+        function myFunction1() {
+            document.getElementById("myDropdown1").classList.toggle("show");
+        }
+
+        function filterFunction1() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput1");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown1");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+        }
+
+        function filterFunction2() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput2");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown2");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function myFunction3() {
+            document.getElementById("myDropdown3").classList.toggle("show");
+        }
+
+        function filterFunction3() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput3");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown3");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function myFunction4() {
+            document.getElementById("myDropdown4").classList.toggle("show");
+        }
+
+        function filterFunction4() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput4");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown4");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function myFunction5() {
+            document.getElementById("myDropdown5").classList.toggle("show");
+        }
+
+        function filterFunction5() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput5");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown5");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        function myFunction6() {
+            document.getElementById("myDropdown6").classList.toggle("show");
+        }
+
+        function filterFunction6() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput6");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown6");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
